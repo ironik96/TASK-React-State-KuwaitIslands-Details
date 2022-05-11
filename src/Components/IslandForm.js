@@ -1,10 +1,13 @@
-export default function IslandForm({ island }) {
+export default function IslandForm({ island, incrementVisitors }) {
   let name = "";
   let phone = "";
   const onClickBook = () => {
-    window.confirm(
-      `Are you sure you want to book to ${island.name} with the Name: ${name}, phone: ${phone}?`
-    );
+    if (
+      window.confirm(
+        `Are you sure you want to book to ${island.name} with the Name: ${name}, phone: ${phone}?`
+      )
+    )
+      incrementVisitors(island.id);
   };
   return (
     <div className="form">

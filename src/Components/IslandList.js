@@ -1,8 +1,7 @@
 import { useState } from "react";
-import islands from "../data/islands";
 import Island from "./Island";
 
-export default function IslandList({ setIsland }) {
+export default function IslandList({ setIsland, islands }) {
   const [query, setQuery] = useState("");
 
   let islandsArray = islands
