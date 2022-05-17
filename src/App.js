@@ -7,6 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [island, setIsland] = useState({
+    id: 2,
     name: "Boubyan",
     img: "http://photos.wikimapia.org/p/00/02/20/48/92_big.jpg",
   });
@@ -16,7 +17,7 @@ function App() {
   const incrementVisitors = (islandID) => {
     const visitedIsland = islands.find((island) => island.id === islandID);
     visitedIsland.visitors++;
-    setIslands(islands);
+    setIslands([...islands]);
   };
 
   return (
